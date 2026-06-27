@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zuza</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background-image: url('ozadja/trava.png');
+        background-repeat: repeat;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        min-height: 250vh;
+        position: relative;
+        inline-size: 89.5%;
+        margin-inline: auto;
+        min-width: 1500px;
+      }
+
+      .doghome {
+        position: absolute;
+        left: 20px;
+        top: 50px;
+      }
+
+      .randompes {
+        transform: scale(0.9);
+        padding: 0;
+        position: absolute;
+        left: 250px;
+        top: 230px;
+        cursor: pointer;
+      }
+
+      #customCursor {
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        pointer-events: none;
+        display: none;
+        z-index: 999999;
+        transform: translate(-70%, -70%);
+      }
+
+      .bubble {
+        position: absolute;
+        z-index: 3;
+        left: 1100px;
+        transform: scale(1.8);
+        top: 100px;
+      }
+
+      #plis {
+        position: absolute;
+        z-index: 1000001; /* above custom cursor */
+        left: 1100px; /* positioned near the image */
+        top: 90px;
+        display: block; /* visible by default */
+        opacity: 1;
+        transition: opacity 220ms ease-in-out;
+        padding: 10px 16px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        color: #000;
+        font-size: 18px;
+        pointer-events: none;
+      }
+
+      .gardener {
+        position: absolute;
+        left: 80px;
+        top: 400px;
+        transform: scale(2.5);
+      }
+
+      .kosilnica {
+        position: absolute;
+        left: 1400px;
+        top: 300px;
+        transform: scale(3);
+      }
+
+      .globe {
+        position: absolute;
+        align-self:center;
+        top: 1100px;
+        transform: scale(1.5);
+      }
+    </style>
+</head>
+<body>
+  <a href="index.html"><img src="gifiinslikce/doghome.gif" alt="doghome" class="doghome"></a>
+  <p id="plis">Prosim pobožaj me!</p>
+  <img src="gifiinslikce/zuza1.jpeg" class="randompes" alt="Random Pes">
+  <img id="customCursor" src="gifiinslikce/rokica.gif" alt="custom cursor">
+  <img src="gifiinslikce/bubble.gif" class="bubble" alt="bubble">
+  <img src="gifiinslikce/gardener.gif" class="gardener" alt="gardener">
+  <img src="gifiinslikce/kosilnica.gif" class="kosilnica" alt="kosilnica">
+  <img src="gifiinslikce/globe.gif" class="globe" alt="globe">
+
+  <script>
+    const randomPes = document.querySelector('.randompes');
+    const customCursor = document.getElementById('customCursor');
+    const plis = document.getElementById('plis');
+    const plisOriginalText = plis.textContent;
+    let gifCursorEnabled = false;
+    let plisTimeout = null;
+
+    function showPlisMessage() {
+      if (plisTimeout) {
+        clearTimeout(plisTimeout);
+      }
+      // temporarily change the text, keep the element visible
+      plis.textContent = 'jupiii!';
+      plis.style.opacity = '1';
+      plisTimeout = setTimeout(() => {
+        plis.textContent = plisOriginalText;
+      }, 2000);
+    }
+
+    randomPes.addEventListener('click', () => {
+      gifCursorEnabled = true;
+      document.body.style.cursor = 'none';
+      customCursor.style.display = 'block';
+      showPlisMessage();
+      if (typeof startMusic === 'function') {
+        startMusic();
+      }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (gifCursorEnabled) {
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.randompes')) {
+        return;
+      }
+      gifCursorEnabled = false;
+      document.body.style.cursor = 'default';
+      customCursor.style.display = 'none';
+    });
+  </script>
+  <audio id="bgMusic" loop>
+  <source src="https://files.catbox.moe/sqsfcu.mp3" type="audio/mp3">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+function startMusic() {
+  music.play().catch(() => {
+    // ignore play errors, user gesture handled elsewhere
+  });
+  document.removeEventListener("click", startMusic);
+  document.removeEventListener("keydown", startMusic);
+}
+
+document.addEventListener("click", startMusic);
+document.addEventListener("keydown", startMusic);
+</script>
+ 
+</body>
+</html>

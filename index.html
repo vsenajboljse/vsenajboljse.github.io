@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vse najboljše</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background-image: url('ozadja/water.jpeg');
+        background-repeat: repeat;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        min-height: 250vh;
+        position: relative;
+        inline-size: 89.5%;
+        margin-inline: auto;
+        min-width: 1500px;
+      }
+      
+      .draggable {
+        cursor: grab;
+        position: absolute;
+        user-select: none;
+        z-index: 1000;
+      }
+      
+      .draggable:active {
+        cursor: grabbing;
+      }
+
+      .cakedog {
+        position: absolute;
+        right: 20px;
+        left: auto;
+        top: 130px;
+        transform: scale(1);
+        transform-origin: center;
+        z-index: 2;
+        user-select: none;
+      }
+
+      .cakespin {
+        position: absolute;
+        left: -40px;
+        top: 110px;
+        z-index: 1;
+        user-select: none;
+        transform: scale(0.8);
+        transform-origin: center;
+      }
+
+      h1 {
+        position: absolute;
+        top: 10px;
+        left: 350px;
+       
+      }
+
+      .clam {
+        position: absolute;
+        left: 500px;
+        
+        top: 1180px;
+        
+        transform: scale(1);
+        transform-origin: center;
+      }
+
+      .clown42 {
+        position: absolute;
+        right: 200px;
+        top: 70px;
+        z-index: 4;
+        transform: scale(1.5);
+        transform-origin: center;
+      }
+
+      .Aquarium {
+        position: absolute;
+        left: 250px;
+        top: 200px;
+        z-index: 1;
+        transform: scale(0.35);
+        transform-origin: left center;
+        right: auto;
+      }
+
+      .mmribica2 {
+        position: absolute;
+        left: 550px;
+        top: 1070px;
+        transform: scale(1);
+        transform-origin: center;
+      }
+
+      .shark {
+        position: absolute;
+        left: 500px;
+        top: 1210px;
+       
+        transform: scale(1.5);
+        transform-origin: center;
+      }
+
+      .fih {
+        position: absolute;
+        left: 400px;
+        top: 1200px;
+        transform: scale(1.5);
+        transform-origin: center;
+      }
+
+      .balloon2 {
+        position: absolute;
+        left: 50px;
+        top: 70px;
+        transform: scale(2);
+        transform-origin: center;
+      }
+
+      .zelva {
+        position: absolute;
+        left: 600px;
+        top: 1100px;
+        transform: scale(1);
+        transform-origin: center;
+      }
+
+      .napihljivariba {
+        position: absolute;
+        left: 400px;
+        top: 1240px;
+        transform: scale(1);
+        transform-origin: center;
+      }
+
+      .morskikit {
+        position: absolute;
+        left: 400px;
+        top: 1050px;
+        transform: scale(1.5);
+        transform-origin: center;
+      }
+
+      .rrriba {
+        position: absolute;
+        left: 500px;
+        top: 1100px;
+        transform: scale(1.5);
+        transform-origin: center;
+      }
+
+      .dogzad {
+        position: absolute;
+        left: 550px;
+        top: 1440px;
+        z-index: 6;
+        transform: scale(1.3);
+        transform-origin: center;
+        
+      }
+
+      .starfih {
+        position: absolute;
+        left: 700px;
+        top: 1050px;
+        transform: scale(1);
+        transform-origin: center;
+      }
+
+      .oil_lamp {
+        position: absolute;
+        left: 350px;
+        top: 810px;
+        transform: scale(1.6);
+        transform-origin: center;
+        z-index: 7;
+     }
+     
+      .lavalamp2 {
+        position: absolute;
+        left: 610px;
+        top: 780px;
+        transform: scale(1.13);
+        transform-origin: center;
+        z-index: 7;
+       }
+
+      .lavalampchanging {
+        position: absolute;
+        left: 535px;
+        top: 817px;
+        transform: scale(1.8);
+        transform-origin: center;
+        z-index: 7;
+       }
+      .greenlamp {
+        position: absolute;
+        left: 445px;
+        top: 798px;
+        transform: scale(1.47);
+        transform-origin: center;
+        z-index: 7;
+       } 
+      .dolfin {
+        position: absolute;
+        left: 250px;
+        top: 920px;
+        transform: scale(0.9);
+        transform-origin: center;
+        z-index: 10;
+      }
+      #delfin {
+        position:absolute;
+        left: 330px;
+        top: 1000px;
+        z-index: 11;
+      } 
+      .cake3 {
+        position:absolute;
+        right: 200px;
+        top: 250px;
+        transform:scale(2.8);
+        transform-origin: center;
+        z-index: 2;
+      } 
+      .klovnkuzi {
+        position:absolute;
+        left: 220px;
+        top: 10px;
+        transform:scale(1);
+        transform-origin: center;
+        z-index: 3;
+      }
+      .ocean {
+        position:absolute;
+        left: 560px;
+        top: 150px;
+        
+        z-index: 5;
+      }
+      .ralseismokingadart {
+        position:absolute;
+        left: 450px;
+        top:200px;
+      }
+      .piracy {
+        position:absolute;
+        left: 540px;
+        top: 200px;
+      }
+      .worm {
+        position:absolute;
+        left: 630px;
+        top: 200px;
+      }
+      .gaywomen {
+        position:absolute;
+        left: 720px;
+        top: 200px;
+        transform: scale(1);
+        transform-origin: center;
+      }
+      .bestviewed {
+        position:absolute;
+        left: 810px;
+        top: 200px;
+      }
+      .sucks {
+        position:absolute;
+        left: 898px;
+        top: 200px;
+      }
+      .queercode {
+        position:absolute;
+        left: 975px;
+        top: 200px;
+      }
+      .ao3 {
+        position:absolute;
+        left: 720px;
+        top: 232px;
+      }
+      .acab {
+        position:absolute;
+        left: 630px;
+        top: 232px;
+      }
+        .click {
+            position:absolute;
+            left: 810px;
+            top: 232px;
+        }
+      .letsrock {
+        position:absolute;
+        top: 330px;
+        left:620px;
+      }
+      .psychcdspin {
+        position:absolute;
+        top: 460px;
+        left: 350px;
+        transform: scale(1.5);
+        transform-origin:center;
+      }
+      .bulldog {
+        position:absolute;
+        top: 550px;
+        left: 350px;
+        z-index: 10;
+      }
+      .wizardkomp {
+        position:absolute;
+        top: 150px;
+        left: 900px;
+        transform: scale(0.4);
+        transform-origin: center;
+      }
+      .zelva2 {
+        position:absolute;
+        top:460px;
+        left:400px;
+        z-index:20;
+        transform: scale(0.3)
+      }  
+      .bitl {
+        position: absolute;
+        top:650px;
+        left:420px;
+        z-index:21;
+      }
+    
+      .win95-box {
+  background-color: #c0c0c0; /* Standard Win95 gray */
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff; /* Bevel effect: light top/left, dark bottom/right */
+  box-shadow: 1px 1px 0px 0px #000000; /* Outer drop shadow */
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  width: 800px;
+  padding: 3px;
+  height: 300px;
+  position: absolute;
+  left: 360px;
+}
+
+.win95-title-bar {
+  background: linear-gradient(90deg, #000080, #1084d0); /* Gradient blue from Win95 header */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 5px;
+  margin-bottom: 5px;
+}
+
+.win95-title {
+  letter-spacing: 0.5px;
+}
+
+.win95-close-btn {
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.win95-content {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080; /* Inner sunken effect */
+  padding: 15px;
+  font-size: 13px;
+  color: #000000;
+  height: 220px;
+  text-align: center;
+}
+.win95-box2 {
+  background-color: #c0c0c0; /* Standard Win95 gray */
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff; /* Bevel effect: light top/left, dark bottom/right */
+  box-shadow: 1px 1px 0px 0px #000000; /* Outer drop shadow */
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  width: 480px;
+  padding: 3px;
+  height: 600px;
+  position: absolute;
+  right: 370px;
+  top: 360px;
+ 
+}
+
+.win95-title-bar2 {
+  background: linear-gradient(90deg, #000080, #1084d0); /* Gradient blue from Win95 header */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 5px;
+  margin-bottom: 5px;
+}
+
+.win95-title2 {
+  letter-spacing: 0.5px;
+}
+
+.win95-close-btn2 {
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.win95-content2 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080; /* Inner sunken effect */
+  padding: 0px;
+  font-size: 13px;
+  color: #000000;
+  height: 500px;
+  text-align: center;
+}
+
+      .win95-box3 {
+  background-color: #c0c0c0; /* Standard Win95 gray */
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff; /* Bevel effect: light top/left, dark bottom/right */
+  box-shadow: 1px 1px 0px 0px #000000; /* Outer drop shadow */
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  width: 300px;
+  padding: 3px;
+  height: 260px;
+  position: absolute;
+  left: 360px;
+  top: 500px;
+}
+
+.win95-title-bar3 {
+  background: linear-gradient(90deg, #000080, #1084d0); /* Gradient blue from Win95 header */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 5px;
+  margin-bottom: 5px;
+}
+
+.win95-title3 {
+  letter-spacing: 0.5px;
+}
+
+.win95-close-btn3 {
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 0 4px;
+  cursor: pointer;
+}
+.win95-content3 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080; /* Inner sunken effect */
+  padding: 15px;
+  font-size: 13px;
+  color: #000000;
+  height: 180px;
+  text-align: center;
+}
+    .win95-box4 {
+  background-color: #c0c0c0; /* Standard Win95 gray */
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff; /* Bevel effect: light top/left, dark bottom/right */
+  box-shadow: 1px 1px 0px 0px #000000; /* Outer drop shadow */
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  width: 280px;
+  padding: 3px;
+  height: 400px;
+  position: absolute;
+  left: 880px;
+  top: 995px;
+}
+
+.win95-title-bar4 {
+  background: linear-gradient(90deg, #000080, #1084d0); /* Gradient blue from Win95 header */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 5px;
+  margin-bottom: 5px;
+}
+
+.win95-title4 {
+  letter-spacing: 0.5px;
+}
+
+.win95-close-btn4 {
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 0 4px;
+  cursor: pointer;
+}
+.win95-content4 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080; /* Inner sunken effect */
+  padding: 15px;
+  font-size: 13px;
+  color: #000000;
+  height: 320px;
+  text-align: center;
+}
+ .adcar {
+     position: absolute;
+     left: 525px;
+     top: 1520px;
+     transform: scale(1.15);
+     transform-origin: center;
+ }
+ .gotyuri {
+     position: absolute;
+     left: 910px;
+     top: 1040px;
+ }
+ .nyan {
+     position: absolute;
+     left: 910px;
+     top: 1100px;
+ }
+ .sonicstamp {
+     position: absolute;
+     left: 1040px;
+     top: 1040px;
+ }   
+ .zelenezvezde {
+     position: absolute;
+     left: 1040px;
+     top: 1100px;
+     transform: scale(1.1);
+ }
+ .neonbeads {
+     position: absolute;
+     left: 910px;
+     top: 1160px;
+ }
+ .aerostamp {
+     position: absolute;
+     left: 1040px;
+     top: 1160px;
+ }
+ .iloveoldweb {
+     position: absolute;
+     left: 910px;
+     top: 1215px;
+ }   
+    .toby {
+        position: absolute;
+        left: 1040px;
+        top: 1215px;
+    } 
+    .glitter {
+        position: absolute;
+        left: 910px;
+        top: 1270px;}
+    .penis {
+        position: absolute;
+        left: 1040px;
+        top: 1270px;
+    }    
+    .isupportgrass {
+        position: absolute;
+        left: 910px;
+        top: 1325px;
+    }
+    .htmlsucks {
+        position: absolute;
+        left: 1040px;
+        top: 1325px;
+    }
+    .sonic2 {
+        position:absolute;
+        transform:scale(0.5);
+        left:1070px;
+        top:140px; 
+    }
+    .sonic7 {
+        position:absolute;
+        left:380px;
+        top:150px;
+    }
+    </style>
+  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<body>
+    <a href="zuza.html"><img src="gifiinslikce/bulldog.gif" alt="bulldog" class="bulldog"></a>
+    <a href="tmnt.html"><img src="gifiinslikce/zelva2.gif" class="zelva2"></a>
+    <a href="bitli.html"><img src="gifiinslikce/bitl.gif" class="bitl"></a>
+    <body>
+        <div class="win95-box">
+            <div class="win95-title-bar">
+                <span class="win95-title">Vse Najboljše!</span>
+                <button class="win95-close-btn">X</button>
+            </div>
+            <div class="win95-content">
+                <p>Danes je tvoj rojstni dan!! jupiii! in tole je tvoja rojstnodnevna spletna stran!</p>
+                <p2>(če nisi Indija Stropnik to NI tvoja rojstnodnevna spletna stran... sori... lahko pa pustiš čestitko za slavljenko!)</p2>
+            </div>
+        </div>
+        <div class="win95-box3">
+            <div class="win95-title-bar3">
+                <span class="win95-title3">Presenečenja</span>
+                <button class="win95-close-btn3">X</button>
+            </div>
+            <div class="win95-content3">
+            </div>
+        </div>
+        <div class="win95-box4">
+            <div class="win95-title-bar4">
+                <span class="win95-title4">stamps</span>
+                <button class="win95-close-btn4">X</button>
+            </div>
+            <div class="win95-content4">
+            </div>
+        </div>
+        <body>
+            <div class="win95-box2">
+                <div class="win95-title-bar2">
+                    <span class="win95-title2">Čestitke</span>
+                    <button class="win95-close-btn2">X</button>
+                </div>
+                <div class="win95-content2">
+                    <iframe id="cestitke" src="https://vsenajboljse.atabook.org/" style="position:absolute;top:39px;width:99.2%;height:551px;left:0px;z-index:10"></iframe>
+                </div>
+            </div>  
+            <div class="blinkie-box"> 
+                <div class="blinkie-track">
+                    <div class="blinkie-set">
+                        <img src="gifiinslikce/bozotheclown.gif" alt="Bozo The Clown">
+                        <img src="gifiinslikce/wizard.gif" alt="Wizard">
+                        <img src="gifiinslikce/fishy.gif" alt="Fishy">
+                        <img src="gifiinslikce/nomercy.gif" alt="Nomercy">
+                        <img src="gifiinslikce/0108-crewmate.gif">
+                        <img src="gifiinslikce/divorce.gif">
+                        <img src="gifiinslikce/0029-pinksparkle.gif">
+                        <img src="gifiinslikce/sexyandsingle.gif">
+                    </div>
+                    <div class="blinkie-set">
+                        <img src="gifiinslikce/bozotheclown.gif" alt="Bozo The Clown">
+                        <img src="gifiinslikce/wizard.gif" alt="Wizard">
+                        <img src="gifiinslikce/fishy.gif" alt="Fishy">
+                        <img src="gifiinslikce/nomercy.gif" alt="Nomercy">
+                        <img src="gifiinslikce/0108-crewmate.gif">
+                        <img src="gifiinslikce/divorce.gif">
+                        <img src="gifiinslikce/0029-pinksparkle.gif">
+                        <img src="gifiinslikce/sexyandsingle.gif">
+                    </div>
+                </div>
+            </div>
+<style>
+.blinkie-box {
+  position: absolute;
+  top: 730px;
+  left: 367px;
+
+  width: 296px;      /* size of the scrolling area */
+  height: 40px;
+  overflow: hidden;  /* hide anything outside */
+  border: 1px solid transparent; /* optional, for debugging */
+}
+
+.blinkie-track {
+  display: flex;
+  width: max-content;
+  
+  animation: scroll 11s linear infinite;
+}
+
+.blinkie-set {
+    display: flex;
+    gap: 10px;
+}
+.blinkie-set img {
+  width: 150px;
+  height: auto;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+ </style>
+    
+    <img src="gifiinslikce/shark.gif" class="draggable shark" alt="Shark">
+    <img src="gifiinslikce/Aquarium.png.webp" class="Aquarium" alt="Aquarium">
+    <img src="gifiinslikce/clown42.gif" class="clown42" alt="Clown42"> 
+    <img src="gifiinslikce/clam.gif" class="draggable clam" alt="Clam"> 
+    <img src="gifiinslikce/cakedog.gif" class="cakedog" alt="Cakedog"> 
+    <img src="gifiinslikce/cakespin.gif" class="cakespin" alt="Cake Spin"> 
+    <img src="gifiinslikce/mmribica2.gif" class="draggable mmribica2" alt="MMribica2">
+    <img src="gifiinslikce/fih.gif" class="draggable fih" alt="Fih">
+    <img src="gifiinslikce/balloon2.gif" class="balloon2" alt="Balloon">
+    <img src="gifiinslikce/zelva.gif" class="draggable zelva" alt="Zelva">
+    <img src="gifiinslikce/napihljivariba.gif" class="draggable napihljivariba" alt="Napihljivariba">
+    <img src="gifiinslikce/morskikit.gif" class="draggable morskikit" alt="Morski Kit">
+    <img src="gifiinslikce/rrriba.gif" class="draggable rrriba" alt="RrRiba">
+    <img src="gifiinslikce/dogzad.gif" class="dogzad">
+    <img src="gifiinslikce/starfih.gif" class="draggable starfih" alt="Starfih">
+    <img src="gifiinslikce/lavalamp.gif" class="oil_lamp" alt="Oil Lamp">
+    <img src="gifiinslikce/lavalamp2.gif" class="lavalamp2" alt="Lava Lamp">
+    <img src="gifiinslikce/lavalampchanging.gif" class="lavalampchanging" alt="Lava Lamp Changing">
+    <img src="gifiinslikce/greenlamp.gif" class="greenlamp" alt="Green Lamp">
+    <img src="gifiinslikce/dolfin.gif" class="dolfin" alt="Dolfin">
+    <p id="delfin"> prosim reši nas!<br>
+                   (z dvojnim klikom)<br></p id="delfin">
+    <img src="gifiinslikce/cake3.gif" class="cake3" alt="Cake3">
+    <img src="gifiinslikce/klovnkuzi.gif" class="klovnkuzi" alt="Klovn Kuzi">
+    <img src="gifiinslikce/ocean.gif" class="ocean" alt="Ocean">
+    <img src="gifiinslikce/ralseismokingadart.gif" class="ralseismokingadart" alt="Ralsei Smoking a Dart">
+    <img src="gifiinslikce/piracy.gif" class="piracy" alt="Piracy">
+    <img src="gifiinslikce/gaywomen.gif" class="gaywomen" alt="Gay Women">
+    <img src="gifiinslikce/acab.gif" class="acab" alt="Acab">
+    <img src="gifiinslikce/bestviewed.gif" class="bestviewed" alt="Best Viewed">
+    <img src="gifiinslikce/sucks.gif" class="sucks" alt="Sucks">
+    <img src="gifiinslikce/queercode.png" class="queercode" alt="Queer Code">
+    <img src="gifiinslikce/ao3.png" class="ao3" alt="AO3">
+    <img src="gifiinslikce/gotyuri.png" class="gotyuri">
+    <img src="gifiinslikce/click.gif" class="click" alt="Click">
+    <img src="gifiinslikce/letsrock.gif" class="letsrock" alt="Lets Rock">
+    <img src="gifiinslikce/psychcdspin.gif" class="psychcdspin">
+    <img src="gifiinslikce/wizardkomp.gif" class="wizardkomp">
+    <img src="gifiinslikce/worm.gif" class="worm">
+    <img src="gifiinslikce/adcar.gif" class="adcar">
+    <img src="gifiinslikce/sonicstamp.gif" class="sonicstamp">
+    <img src="gifiinslikce/zelenezvezde.png" class="zelenezvezde">
+    <img src="gifiinslikce/neonbeads.png" class="neonbeads">
+    <img src="gifiinslikce/aerostamp.gif" class="aerostamp">
+    <img src="gifiinslikce/iloveoldweb.png" class="iloveoldweb">
+    <img src="gifiinslikce/toby.gif" class="toby">
+    <img src="gifiinslikce/glitter.gif" class="glitter">
+    <img src="gifiinslikce/penis.jpg" class="penis">
+    <img src="gifiinslikce/isupportgrass.png" class="isupportgrass">
+    <img src="gifiinslikce/abstractcastle.png" class="htmlsucks">
+    <img src="gifiinslikce/sonic2.gif" class="sonic2">
+    <img src="gifiinslikce/sonic7.gif" class="sonic7">
+    <a href="https://happy-bday.neocities.org"><img src="gifiinslikce/nyan.gif" class="nyan"></a>
+    <style>
+    .title-bar {
+        background:linear-gradient(90deg, rgb(0, 6, 128), rgb(112, 151, 218), rgb(146, 228, 253));
+    }
+ 
+    .player {
+        width:fit-content;
+        border: black solid 1px;
+        border-width: 1px 0px 0px 1px;
+        margin-left:auto;
+        margin-right:auto;
+        position:absolute;
+        left:360px;
+        top: 360px;
+       
+    }
+ 
+    .controlimg:hover {
+        cursor:help;
+    }
+</style>
+ 
+<!-- below is styling to get windows 98 effect. from 98.css [https://jdan.github.io/98.css/] --> 
+<style>
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+ 
+input[type="range"]:focus {
+  outline: none;
+}
+ 
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 21px;
+  width: 11px;
+  background: svg-load("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-horizontal.svg");
+  transform: translateY(-8px);
+  box-shadow: none;
+  border: none;
+}
+ 
+input[type="range"].has-box-indicator::-webkit-slider-thumb {
+  background: svg-load("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-rectangle-horizontal.svg");
+  transform: translateY(-10px);
+}
+ 
+input[type="range"]::-moz-range-thumb {
+  height: 21px;
+  width: 11px;
+  border: 0;
+  border-radius: 0;
+  background: svg-load("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-horizontal.svg");
+  transform: translateY(2px);
+}
+ 
+input[type="range"]::-moz-range-thumb {
+  background: url("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-horizontal.svg");
+  border: 0;
+  border-radius: 0;
+  height: 21px;
+  transform: translateY(2px);
+  width: 11px;
+  }
+ 
+input[type="range"].has-box-indicator::-moz-range-thumb {
+  background: svg-load("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-rectangle-horizontal.svg");
+  transform: translateY(0px);
+}
+ 
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  background: black;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+}
+ 
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  background: black;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+}
+ 
+button,input,label,option,select,table,textarea,ul.tree-view{-webkit-font-smoothing:none;font-family:"Pixelated MS Sans Serif",Arial;font-size:11px}h1{font-size:5rem}h2{font-size:2.5rem}h3{font-size:2rem}h4{font-size:1.5rem}u{border-bottom:.5px solid #222;text-decoration:none}button,input[type=reset],input[type=submit]{border:none;border-radius:0;box-sizing:border-box;color:transparent;min-height:23px;min-width:75px;padding:0 12px;text-shadow:0 0 #222}.vertical-bar,button,input[type=reset],input[type=submit]{background:silver;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf}.vertical-bar{height:20px;width:4px}button:not(:disabled):active,input[type=reset]:not(:disabled):active,input[type=submit]:not(:disabled):active{box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;text-shadow:1px 1px #222}@media (not(hover)){button:not(:disabled):hover,input[type=reset]:not(:disabled):hover,input[type=submit]:not(:disabled):hover{box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey}}button:focus,input[type=reset]:focus,input[type=submit]:focus{outline:1px dotted #000;outline-offset:-4px}button::-moz-focus-inner,input[type=reset]::-moz-focus-inner,input[type=submit]::-moz-focus-inner{border:0}:disabled,:disabled+label,input[readonly],input[readonly]+label{color:grey}:disabled+label,button:disabled,input[type=reset]:disabled,input[type=submit]:disabled{text-shadow:1px 1px 0 #fff}
+ 
+.title-bar-controls button {border:none;border-radius:0;box-sizing:border-box;color:transparent;min-height:23px;min-width:75px;padding:0 12px;text-shadow:0 0 #222}
+ 
+.title-bar-controls button {background:silver;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf}
+ 
+.title-bar-controls button:not(:disabled):active {box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;text-shadow:1px 1px #222}
+ 
+@media (not(hover)){
+	button:not(:disabled):hover {
+    box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey}
+}
+ 
+.title-bar-controls button:focus {outline:1px dotted #000; outline-offset:-4px}
+.title-bar-controls button::-moz-focus-inner {border:0}
+ 
+ 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("https://files.catbox.moe/1za99g.woff") format("woff");
+  src: url("https://files.catbox.moe/8fwbkl.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("https://files.catbox.moe/z7csle.woff") format("woff");
+  src: url("https://files.catbox.moe/moqhx6.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+ 
+ 
+.window, .title-bar {
+  font-family: "Pixelated MS Sans Serif", Arial;
+  -webkit-font-smoothing: none;
+  font-size: 11px;
+}
+ 
+.window {
+  box-shadow: inset -1px -1px #0a0a0a,
+    inset 1px 1px #dfdfdf, inset -2px -2px #808080,
+    inset 2px 2px #ffffff;
+  background: #c0c0c0;
+  padding: 3px;
+  width:260px;
+}
+ 
+.title-bar {
+  padding: 3px 2px 3px 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.title-bar-text {
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0;
+  margin-right: 24px;
+}
+ 
+.title-bar-controls {
+  display: flex;
+}
+ 
+.title-bar-controls button {
+  padding: 0;
+  display: block;
+  min-width: 16px;
+  min-height: 14px;
+}
+ 
+.title-bar-controls button:active {
+  padding: 0;
+}
+ 
+.title-bar-controls button:focus {
+  outline: none;
+}
+ 
+.title-bar-controls button[aria-label=Minimize]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/main/icon/minimize.svg");
+background-position:bottom 3px left 4px;
+background-repeat:no-repeat}
+ 
+.title-bar-controls button[aria-label=Maximize]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/4a2282dd9170cabf730fb5803d1153d86b2e94e3/icon/maximize.svg");
+background-position:top 2px left 3px;
+background-repeat:no-repeat}
+ 
+.title-bar-controls button[aria-label=Close]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/main/icon/close.svg");
+background-position:top 3px left 4px;
+background-repeat:no-repeat;
+margin-left:2px}
+ 
+.window-body { margin:0px; height:98px; }
+ 
+ 
+ 
+input[type=range] {
+        -webkit-appearance: none;
+        appearance:none;
+        width: 100%;
+    }
+ 
+    input[type=range]:focus {
+        outline: none;
+    }
+ 
+    /* settings for chrome browsers */
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 2px; /* thickness of seeking track */
+        cursor: help;
+    }
+ 
+ 
+    /* settings for firefox browsers */
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 2px; /* thickness of seeking track */
+        cursor: help;
+    }
+ 
+    .flex {display: flex;}
+ 
+    .titlebaricon { height:14px; width:14px;}
+ 
+ 
+    .songtitlewindow {
+        background-color:#fff;
+        box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+    }
+ 
+    #musicplayer {
+        border:2px solid silver; /* border around player */
+        border-width: 2px 0px 0px 0px;
+        width:160px; /* width of the player */
+    }
+ 
+    #imagestyle {
+        background:silver; /* background color of player */
+        border:2px solid silver; /* border around player */
+        width:95px; /* width of the player */
+        height:95px;
+        box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+    }
+ 
+    .ic {
+    	width:90px;
+        position:relative;
+        bottom:1px;
+        right:1px;
+        overflow:hidden;
+        padding:2px;
+        border:2px solid transparent;
+    }
+ 
+    .songtitlearrow {
+        background-size:100%;
+        background-repeat:no-repeat;
+        background-image:url(https://files.catbox.moe/f5e8np.png);
+        height:21px;
+        width:21px;
+        position:relative;
+        top:2px;
+        left:-2px;
+        border:0px solid transparent;
+        border-width:0px 0px 0px 0px;
+    }
+ 
+    .songtitle {
+        padding:5px; /* padding around song title */
+        border-bottom:0px; /* border under song title */
+        display:block;
+        font-family:Pixelated MS Sans Serif;
+    }
+ 
+    .controls {
+        font-size:18px !important; /* size of controls */
+        text-align:center;
+        width:100%;
+        position:relative;
+        bottom:10px;
+    }
+ 
+    .controls td {
+        padding:8px 5px 0px 5px; /* padding around controls */
+    }
+ 
+    button {
+        min-width:40px;
+    }
+ 
+    .seeking {
+        background-color:#c0c0c0; /* background color of seeking bar */
+        display:flex;
+        justify-content: space-evenly;
+        padding:14px; /* padding around seeking bar */
+    }
+ 
+    .current-time {
+        padding-right:5px;
+    }
+ 
+    .total-duration {
+        padding-left:5px;
+    }
+ 
+    .controlimg {
+    height:15px;
+    width:15px;
+    }
+</style>
+</head>
+<body>
+<div class="player">
+<div class="window">
+  <div class="title-bar">
+    <div class="title-bar-text"><sub><img class="titlebaricon" src="https://files.catbox.moe/tg55zp.png" alt="cd player icon"></sub> CD player</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <div class="flex">
+<div id="imagestyle"><img class="ic" src="gifiinslikce/raphallstar.png" alt="momo icon"></div>
+    <div id="musicplayer">
+        <div class="songtitlewindow">
+            <div class="flex"><marquee scrollamount="4" class="songtitle"></marquee><div class="songtitlearrow"></div></div>
+        </div>
+ 
+ <div class="seeking">
+            <div class="current-time">00:00</div>
+ 
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+ 
+            <div class="total-duration">0:00</div>
+        </div>
+ 
+        <table class="controls">
+            <tr>
+                <td>
+                    <div class="prev-track" onclick="prevTrack()"><button><img src="https://files.catbox.moe/hhoh1h.png" class="controlimg"></button></div>
+                </td>
+                <td>
+                    <div class="playpause-track" onclick="playpauseTrack()" ><button><img src="https://files.catbox.moe/w93riq.png" class="controlimg"></button></div>
+                </td>
+                <td>
+                    <div class="next-track" onclick="nextTrack()"><button><img src="https://files.catbox.moe/p4q9gf.png" class="controlimg"></button></div>
+                </td>
+            </tr>
+        </table>
+ 
+        <audio id="music" src=""></audio> 
+    </div>
+    </div>
+  </div>
+</div>
+    </div>
+</body>
+ 
+<script>
+        // initiate variables
+        let track_name = document.querySelector(".songtitle");
+ 
+        let playpause_btn = document.querySelector(".playpause-track");
+        let next_btn = document.querySelector(".next-track");
+        let prev_btn = document.querySelector(".prev-track");
+ 
+        let seek_slider = document.querySelector(".seek_slider");
+        let curr_time = document.querySelector(".current-time");
+        let total_duration = document.querySelector(".total-duration");
+ 
+        let track_index = 0;
+        let isPlaying = false;
+        let updateTimer;
+ 
+        // create new audio element
+        let curr_track = document.getElementById("music");
+ 
+        //
+        // DEFINE YOUR SONGS HERE!!!!!
+        // MORE THAN FOUR SONGS CAN BE ADDED!!
+        // JUST ADD ANOTHER BRACKET WITH NAME AND PATH
+        // CATBOX.MOE IS RECOMMENDED FOR UPLOADING MP3 FILES
+        let track_list = [
+            {
+                name:"Happy Birthday",
+                path:"https://files.catbox.moe/s2ii4h.mp3"
+            },
+            {
+                name:":)",
+                path:"https://files.catbox.moe/w4hmp1.mp3"
+            },
+            {
+                name:"Mii Editor-Mii Maker (Wii U)",
+                path:"https://files.catbox.moe/6mc5x0.mp3"
+            },
+            {
+                name:"LEASE by Takeshi Abo",
+                path:"https://files.catbox.moe/amnnro.mp3"
+            },
+            {
+                name:"Lotus Waters",
+                path:"https://files.catbox.moe/pcrb7u.mp3"
+            }
+        ];
+        //
+        //
+        //
+        //
+        //
+ 
+        function loadTrack(track_index) {
+            clearInterval(updateTimer);
+            resetValues();
+ 
+            // load a new track
+            curr_track.src = track_list[track_index].path;
+            curr_track.load();
+ 
+            // update details of the track
+            track_name.textContent = "playing " + (track_index + 1) + " of " + track_list.length + ": " + track_list[track_index].name;
+ 
+            // set an interval of 1000 milliseconds for updating the seek slider
+            updateTimer = setInterval(seekUpdate, 1000);
+ 
+            // move to the next track if the current one finishes playing 
+            curr_track.addEventListener("ended", nextTrack);
+        }
+ 
+        // reset values
+        function resetValues() {
+            curr_time.textContent = "0:00";
+            total_duration.textContent = "0:00";
+            seek_slider.value = 0;
+        }
+ 
+        // checks if song is playing
+        function playpauseTrack() {
+            if (!isPlaying) playTrack();
+            else pauseTrack();
+        }
+ 
+        // plays track when play button is pressed
+        function playTrack() {
+            curr_track.play();
+            isPlaying = true;
+ 
+            // replace icon with the pause icon
+            playpause_btn.innerHTML = '<button><img src="https://files.catbox.moe/njer0s.png" class="controlimg"></i></button>';
+        }
+ 
+        // pauses track when pause button is pressed
+        function pauseTrack() {
+            curr_track.pause();
+            isPlaying = false;
+ 
+            // replace icon with the play icon
+            playpause_btn.innerHTML = '<button><img src="https://files.catbox.moe/w93riq.png" class="controlimg"></button>';
+        }
+ 
+        // moves to the next track
+        function nextTrack() {
+            if (track_index < track_list.length - 1)
+                track_index += 1;
+            else track_index = 0;
+            loadTrack(track_index);
+            playTrack();
+        }
+ 
+        // moves to the previous track
+        function prevTrack() {
+            if (track_index > 0)
+                track_index -= 1;
+            else track_index = track_list.length;
+            loadTrack(track_index);
+            playTrack();
+        }
+ 
+        // seeker slider
+        function seekTo() {
+            seekto = curr_track.duration * (seek_slider.value / 100);
+            curr_track.currentTime = seekto;
+        }
+ 
+        function seekUpdate() {
+            let seekPosition = 0;
+ 
+            // check if the current track duration is a legible number
+            if (!isNaN(curr_track.duration)) {
+                seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+                seek_slider.value = seekPosition;
+ 
+            // calculate the time left and the total duration
+            let currentMinutes = Math.floor(curr_track.currentTime / 60);
+            let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+            let durationMinutes = Math.floor(curr_track.duration / 60);
+            let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+ 
+            // adding a zero to the single digit time values
+            if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+            if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+            if (currentMinutes < 10) { currentMinutes = currentMinutes; }
+            if (durationMinutes < 10) { durationMinutes = durationMinutes; }
+ 
+            curr_time.textContent = currentMinutes + ":" + currentSeconds;
+            total_duration.textContent = durationMinutes + ":" + durationSeconds;
+          }
+        }
+ 
+        // load the first track in the tracklist
+        loadTrack(track_index);
+    </script>
+    <script>
+      let draggedElement = null;
+      let offsetX = 0;
+      let offsetY = 0;
+      
+      document.querySelectorAll('img.draggable').forEach(img => {
+        img.addEventListener('mousedown', function(e) {
+          draggedElement = this;
+          const rect = this.getBoundingClientRect();
+          offsetX = e.clientX - rect.left;
+          offsetY = e.clientY - rect.top;
+          this.style.right = 'auto';
+          this.style.zIndex = 1100;
+        });
+      });
+      
+      document.addEventListener('mousemove', function(e) {
+        if (draggedElement) {
+          draggedElement.style.left = (e.pageX - offsetX) + 'px';
+          draggedElement.style.top = (e.pageY - offsetY) + 'px';
+        }
+      });
+      
+      document.addEventListener('mouseup', function() {
+        if (draggedElement) {
+          draggedElement.style.zIndex = 1000;
+        }
+        draggedElement = null;
+      });
+    </script>
+  </body>
+  
+</body> 
+</html>
